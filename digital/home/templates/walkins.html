@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% include 'homepage.html' %}
+{% load crispy_forms_tags %}
+	{% csrf_token %}
+	{% block content %}
+<html>
+<head>
+	<meta charset="Utf-8">
+	<meta name="viewport" content="width=device-width,initialscale=1,shrink-to-fit=no">
+	<title></title>
+	<style type="text/css">
+		table, td, th{
+				border: 2px solid;
+		}
+		table{
+			border-collapse: collapse;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div style="margin-top: 50px;">
+	<center><h1>Walkins</h1></div></center>
+	<table class="table table-bordered"style="width: 70%;height: 50%;margin-left: 200px;">
+		<tr>
+			<td>Name</td>
+			<td>Email</td>
+			<td>Phone_no</td>
+			<td>Course</td>
+			<td>Source</td>
+			<td>Leadstatus</td>
+			<td>Date_demo</td>
+			<td>Counsler</td>
+			<td>Remark</td>
+		</tr>
+
+		{% for i in details %}
+
+		
+		<tr>
+			<td>{{i.Name}}</td>
+			<td>{{i.Email}}</td>
+			<td>{{i.Phone_no}}</td>
+			<td>{{i.Course}}</td>
+			<td>{{i.Source}}</td>
+			<td>{{i.Leadstatus}}</td>
+			<td>{{i.Date_demo}}</td>
+			<td>{{i.Counsler}}</td>
+			<td>{{i.Remark}}</td>
+		</tr>	
+		{% endfor %}
+	</table>
+	</div>
+			<!-- <a href = "{url 'single_data' id=i.id }">{{i.Name}}</a> -->
+		</body>
+</html>
+	{% endblock %}
+
+	
+
+

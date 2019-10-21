@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login page</title>
+	<style type="text/css">
+		div{
+			margin-top: 150px;
+			width: 300px;
+			height: 320px
+		}
+		input{
+			padding: 15px;
+			
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<form method="POST">
+	{% csrf_token %}
+		<div style="border: 2px solid grey;background-color: lightgrey;">
+			<h1>LOGIN</h1>
+			<label>Username</label><br>
+			<input type="text" name="username"><br>
+			<label>Password</label><br>
+			<input type="Password" name="password"><br><br><br>
+			<input type="submit" name="submit"><br>
+		</div>
+</form>
+</center>
+</body>
+</html>
+

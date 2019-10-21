@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% include 'homepage.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<html>
+<head>
+	<title>Counselling1</title>
+	<style type="text/css">
+		table, tr, td{
+			border:2px solid;
+		}
+		table{
+			border-collapse: collapse;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Mobile</td>
+			<td>Email</td>
+			<td>Course</td>
+			<td>Source</td>
+			<td>Lead_Status</td>
+			<td>Demo_Date</td>
+			<td>Counsler</td>
+			<td>Remarks</td>
+			<td>Join</td>
+			<td>Willing</td>
+			<td>Dead</td>
+		</tr>
+	{% for i in details %}
+		<tr>
+			<td>{{i.Name}}</td>
+			<td>{{i.Phone_no}}</td>
+			<td>{{i.Email}}</td>
+			<td>{{i.Course}}</td>
+			<td>{{i.Source}}</td>
+			<td>{{i.Leadstatus}}</td>
+			<td>{{i.Date_demo}}</td>
+			<td>{{i.Counsler}}</td>
+			<td>{{i.Remark}}</td>
+			<td><a href="{% url 'joining' %}"><input type="submit" name="" value="JoiN" class="btn btn-primary"></a></td>
+			<td><a href="{% url 'update' i.id %}"><button class="btn btn-secondary">Willing</button></a></td>
+			<td><a href="{% url 'delete' i.id %}"><button class="btn btn-success">Dead</button></a></td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>
+{% endblock %}

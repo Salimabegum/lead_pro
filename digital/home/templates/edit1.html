@@ -1,0 +1,75 @@
+{% include 'homepage.html' %}
+{% load crispy_forms_tags %}
+<html>
+	<head>
+		<style>
+		#div1{
+			border:2px solid grey;
+			background-color:grey;
+			margin-left:200px;
+			width:800px;
+			height:1200px;
+			margin-top: 100px;
+		}
+		#div2{
+			margin-left:50px;
+		}
+		.input{
+			width:650px;
+			padding:18px;
+			height:20px;
+		}
+		.input1{
+			width:650px;
+			height:40px;
+		}
+				.select{
+			width: 90%;
+			height: 40px;
+			color: black;
+		}
+		</style>
+	</head>
+	<body>
+		<form method="POST">
+			{% csrf_token %}
+		<div id ="div1">
+			<h2 style="text-align:center;">Update Form</h2>
+			<div id="div2">
+				Name<br>
+				<input class="input" type="text" name="name" value="{{details1.name}}"><br>
+				Course<br>
+				<select name="course" class="select" value="{{details1.course}}">
+					<option>None</option>
+					<option>Python</option>
+					<option>Django</option>
+					<option>Data science</option>
+				</select><br>
+				Completion_Date<br>
+				<input class="input1" type="date" name="Completion_Date" value="{{details1.Completion_Date}}"><br>
+				Date_joining<br>
+				<input class="input1" type="date" name="Date_joining" value="{{details1.Date_joining}}"><br>	
+				Course_fee<br>
+				<input class="input1" type="text" name="Course_fee" value="{{details1.Course_fee}}"><br>					
+				Instructor<br>
+				<input class="input1" type="text" name="Instructor" value="{{details1.Instructor}}"><br>
+				Aadhar_no<br>
+				<input class="input1" type="text" name="Aadhar_no" value="{{details1.Aadhar_no}}"><br>
+				Email<br>
+				<input class="input" type="text" name="email" value="{{details1.email}}"><br>
+				Phone_no<br>
+				<input class="input"  type="text" name = "phone_no" value="{{details1.phone_no}}"><br>
+
+
+				Remark<br>
+				<input type="text" name="remark" class="input" value="{{details1.remark}}"><br><br>
+				Status<br>
+				<input type="text" name="status" class="input" ><br><br>
+				<input class="input" type="submit" name="submit">
+			</div>
+			
+		</div>
+		</form>
+	</body>
+</html>
+</form>

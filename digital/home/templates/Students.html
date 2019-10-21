@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% include 'homepage.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<html>
+<head>
+	<title>Current</title>
+	<style type="text/css">
+		table, tr, td{
+			border:2px solid;
+		}
+		table{
+			border-collapse: collapse;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<h1>COMPLETED-STUDENTS</h1>
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Course</td>
+			<td>Completion_Date</td>
+			<td>Date_joining</td>
+			<td>Course_fee</td>
+			<td>Instuctor</td>
+			<td>Aadhar_no</td>
+			<td>Email</td>
+			<td>Mobile</td>
+			<td>Status</td>
+		</tr>
+	{% for i in details1 %}
+		<tr>
+			<td>{{i.id}}</td>
+			<td>{{i.name}}</td>
+			<td>{{i.course}}</td>
+			<td>{{i.Completion_Date}}</td>
+			<td>{{i.Date_joining}}</td>
+			<td>{{i.Course_fee}}</td>
+			<td>{{i.Instuctor}}</td>
+			<td>{{i.Aadhar_no}}</td>
+			<td>{{i.email}}</td>
+			<td>{{i.phone_no}}</td>
+			<td>{{i.status}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+
+	<h1>INPROCESS-STUDENTS</h1>
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Course</td>
+			<td>Completion_Date</td>
+			<td>Date_joining</td>
+			<td>Course_fee</td>
+			<td>Instuctor</td>
+			<td>Aadhar_no</td>
+			<td>Email</td>
+			<td>Mobile</td>
+			<td>Status</td>
+		</tr>
+	{% for i in details2 %}
+		<tr>
+			<td>{{i.id}}</td>
+			<td>{{i.name}}</td>
+			<td>{{i.course}}</td>
+			<td>{{i.Completion_Date}}</td>
+			<td>{{i.Date_joining}}</td>
+			<td>{{i.Course_fee}}</td>
+			<td>{{i.Instuctor}}</td>
+			<td>{{i.Aadhar_no}}</td>
+			<td>{{i.email}}</td>
+			<td>{{i.phone_no}}</td>
+			<td>{{i.status}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+
+		<h1>DISCONTINUED-STUDENTS</h1>
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Course</td>
+			<td>Completion_Date</td>
+			<td>Date_joining</td>
+			<td>Course_fee</td>
+			<td>Instuctor</td>
+			<td>Aadhar_no</td>
+			<td>Email</td>
+			<td>Mobile</td>
+			<td>Status</td>
+			<td>Rejoin</td>
+		</tr>
+	{% for i in details3 %}
+		<tr>
+			<td>{{i.id}}</td>
+			<td>{{i.name}}</td>
+			<td>{{i.course}}</td>
+			<td>{{i.Completion_Date}}</td>
+			<td>{{i.Date_joining}}</td>
+			<td>{{i.Course_fee}}</td>
+			<td>{{i.Instuctor}}</td>
+			<td>{{i.Aadhar_no}}</td>
+			<td>{{i.email}}</td>
+			<td>{{i.phone_no}}</td>
+			<td>{{i.status}}</td>
+			<td><a href="{% url 'joining' %}">Rejoin</a></td>
+		</tr>
+	{% endfor %}
+	</table>
+
+
+</body>
+</html>
+{% endblock %}

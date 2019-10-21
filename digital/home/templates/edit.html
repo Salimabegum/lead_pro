@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+
+{% include 'homepage.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<html>
+<head>
+	<title>Counselling page</title>
+	<style type="text/css">
+		#container{
+			width: 80%;
+			height: 70%;
+			background-color: grey;
+			padding: 20px;
+			margin-left: 50px;
+			margin-top: 100px;
+			}
+		#select{
+			width: 80%;
+			height: 40px;
+			color: black;
+		}
+		button{
+			width: 100px;
+			height: 40px;
+			border-radius: 10px;
+			background-color: green;
+			border-color: green;
+		}	
+		</style>
+</head>
+<body>
+	<form method="POST" action="{% url 'update' details.id %}">
+	{% csrf_token %}
+	<div id = "container">
+		<center><h1>UPDATE</h1></center>
+
+			<div>
+				<h4>Name</h4>
+				<input type="text" name="Name" value={{details.Name}} style="width: 80%;height: 40px;">
+			</div><br>
+			<div>
+				<h4>Date</h4>
+				<input type="date" name="Date_demo" value={{details.Date_demo}} style="width: 80%;height: 40px;">
+			</div><br>
+			<br>
+		<center><input type="submit" name="" value="Find" class="btn btn-success"></center>
+	</div>
+	</form>
+</body>
+</html>
+
+{% endblock %}

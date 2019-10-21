@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% include 'homepage.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<html>
+<head>
+	<title>Calling</title>
+	<style type="text/css">
+		table, tr, td{
+			border:2px solid;
+		}
+		table{
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Mobile</td>
+			<td>Email</td>
+			<td>Course</td>
+			<td>Source</td>
+			<td>Lead_Status</td>
+			<td>Demo_Date</td>
+			<td>Counsler</td>
+			<td>Remarks</td>
+		</tr>
+	{% for i in details %}
+		<tr>
+			<td>{{i.Name}}</td>
+			<td>{{i.Phone_no}}</td>
+			<td>{{i.Email}}</td>
+			<td>{{i.Course}}</td>
+			<td>{{i.Source}}</td>
+			<td>{{i.Leadstatus}}</td>
+			<td>{{i.Date_demo}}</td>
+			<td>{{i.Counsler}}</td>
+			<td>{{i.Remark}}</td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>
+{% endblock %}
